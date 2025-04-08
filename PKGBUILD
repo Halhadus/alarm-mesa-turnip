@@ -84,9 +84,6 @@ makedepends=(
 
   # valgrind deps
   valgrind
-
-  # d3d12 deps
-  directx-headers
 )
 options=(
   # GCC 14 LTO causes segfault in LLVM under si_llvm_optimize_module
@@ -124,11 +121,10 @@ build() {
 
   local meson_options=(
     -D android-libbacktrace=disabled
-    #-D b_lto=$([[ $CARCH == aarch64 ]] && echo true || echo false)
     -D b_ndebug=true
-    -D gallium-drivers=freedreno,llvmpipe,softpipe,virgl,zink,d3d12${GALLIUM}
+    -D gallium-drivers=freedreno,llvmpipe,softpipe,virgl,zink
     -D gallium-extra-hud=true
-    -D gallium-nine=true
+    -D gallium-nine=false
     -D gallium-opencl=icd
     -D gallium-rusticl=true
     -D gallium-xa=disabled

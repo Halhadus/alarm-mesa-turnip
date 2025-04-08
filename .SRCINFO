@@ -50,7 +50,6 @@ pkgbase = mesa
 	makedepends = wayland-protocols
 	makedepends = xorgproto
 	makedepends = valgrind
-	makedepends = directx-headers
 	options = !lto
 	source = https://mesa.freedesktop.org/archive/mesa-24.2.7.tar.xz
 	source = https://mesa.freedesktop.org/archive/mesa-24.2.7.tar.xz.sig
