@@ -1,7 +1,7 @@
-diff --git a/sa/mesa-24.2.7/src/freedreno/vulkan/tu_shader.cc b/mesa-24.2.7/src/freedreno/vulkan/tu_shader.cc
+diff --git a/src/freedreno/vulkan/tu_shader.cc b/src/freedreno/vulkan/tu_shader.cc
 index 1f7f077..ddd0f1a 100644
---- a/sa/mesa-24.2.7/src/freedreno/vulkan/tu_shader.cc
-+++ b/mesa-24.2.7/src/freedreno/vulkan/tu_shader.cc
+--- a/src/freedreno/vulkan/tu_shader.cc
++++ b/src/freedreno/vulkan/tu_shader.cc
 @@ -2124,10 +2124,10 @@ tu_upload_shader(struct tu_device *dev,
        size += vpc_size;
     }
@@ -52,10 +52,10 @@ index 1f7f077..ddd0f1a 100644
  
     if (shader->pvtmem_bo)
        tu_bo_finish(dev, shader->pvtmem_bo);
-diff --git a/sa/mesa-24.2.7/src/freedreno/vulkan/tu_wsi.cc b/mesa-24.2.7/src/freedreno/vulkan/tu_wsi.cc
+diff --git a/src/freedreno/vulkan/tu_wsi.cc b/src/freedreno/vulkan/tu_wsi.cc
 index 57cf904..4b397e7 100644
---- a/sa/mesa-24.2.7/src/freedreno/vulkan/tu_wsi.cc
-+++ b/mesa-24.2.7/src/freedreno/vulkan/tu_wsi.cc
+--- a/src/freedreno/vulkan/tu_wsi.cc
++++ b/src/freedreno/vulkan/tu_wsi.cc
 @@ -48,6 +48,10 @@ tu_wsi_init(struct tu_physical_device *physical_device)
     if (result != VK_SUCCESS)
        return result;
@@ -67,10 +67,10 @@ index 57cf904..4b397e7 100644
     physical_device->wsi_device.supports_modifiers = true;
     physical_device->wsi_device.can_present_on_device =
        tu_wsi_can_present_on_device;
-diff --git a/sa/mesa-24.2.7/src/util/anon_file.c b/mesa-24.2.7/src/util/anon_file.c
+diff --git a/src/util/anon_file.c b/src/util/anon_file.c
 index bc674c4..1a52b3f 100644
---- a/sa/mesa-24.2.7/src/util/anon_file.c
-+++ b/mesa-24.2.7/src/util/anon_file.c
+--- a/src/util/anon_file.c
++++ b/src/util/anon_file.c
 @@ -137,6 +137,11 @@ os_create_anonymous_file(int64_t size, const char *debug_name)
     char *name;
  
@@ -83,10 +83,10 @@ index bc674c4..1a52b3f 100644
     if (!path) {
        errno = ENOENT;
        return -1;
-diff --git a/sa/mesa-24.2.7/src/util/u_process.c b/mesa-24.2.7/src/util/u_process.c
+diff --git a/src/util/u_process.c b/src/util/u_process.c
 index 404936d..16ad32d 100644
---- a/sa/mesa-24.2.7/src/util/u_process.c
-+++ b/mesa-24.2.7/src/util/u_process.c
+--- a/src/util/u_process.c
++++ b/src/util/u_process.c
 @@ -103,7 +103,7 @@ __getProgramName()
  {
     return strdup(program_invocation_short_name);
@@ -96,10 +96,10 @@ index 404936d..16ad32d 100644
  #if defined(__NetBSD__)
  #    include <sys/param.h>
  #endif
-diff --git a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common.c b/mesa-24.2.7/src/vulkan/wsi/wsi_common.c
+diff --git a/src/vulkan/wsi/wsi_common.c b/src/vulkan/wsi/wsi_common.c
 index 898bdd7..83d1feb 100644
---- a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common.c
-+++ b/mesa-24.2.7/src/vulkan/wsi/wsi_common.c
+--- a/src/vulkan/wsi/wsi_common.c
++++ b/src/vulkan/wsi/wsi_common.c
 @@ -1543,7 +1543,7 @@ wsi_common_queue_present(const struct wsi_device *wsi,
  #endif
        }
@@ -118,10 +118,10 @@ index 898bdd7..83d1feb 100644
     assert(chain->blit.type == WSI_SWAPCHAIN_NO_BLIT ||
            chain->blit.type == WSI_SWAPCHAIN_BUFFER_BLIT);
  
-diff --git a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common.h b/mesa-24.2.7/src/vulkan/wsi/wsi_common.h
+diff --git a/src/vulkan/wsi/wsi_common.h b/src/vulkan/wsi/wsi_common.h
 index 014cb71..a70a607 100644
---- a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common.h
-+++ b/mesa-24.2.7/src/vulkan/wsi/wsi_common.h
+--- a/src/vulkan/wsi/wsi_common.h
++++ b/src/vulkan/wsi/wsi_common.h
 @@ -178,6 +178,7 @@ struct wsi_device {
     } win32;
  
@@ -130,10 +130,10 @@ index 014cb71..a70a607 100644
  
     /* Set to true if the implementation is ok with linear WSI images. */
     bool wants_linear;
-diff --git a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_display.c b/mesa-24.2.7/src/vulkan/wsi/wsi_common_display.c
+diff --git a/src/vulkan/wsi/wsi_common_display.c b/src/vulkan/wsi/wsi_common_display.c
 index f204910..f2e76dd 100644
---- a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_display.c
-+++ b/mesa-24.2.7/src/vulkan/wsi/wsi_common_display.c
+--- a/src/vulkan/wsi/wsi_common_display.c
++++ b/src/vulkan/wsi/wsi_common_display.c
 @@ -176,6 +176,12 @@ struct wsi_display_sync {
  
  static uint64_t fence_sequence;
@@ -218,10 +218,10 @@ index f204910..f2e76dd 100644
           pthread_join(wsi->hotplug_thread, NULL);
        }
  
-diff --git a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_drm.c b/mesa-24.2.7/src/vulkan/wsi/wsi_common_drm.c
+diff --git a/src/vulkan/wsi/wsi_common_drm.c b/src/vulkan/wsi/wsi_common_drm.c
 index 9835f8f..ba73f67 100644
---- a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_drm.c
-+++ b/mesa-24.2.7/src/vulkan/wsi/wsi_common_drm.c
+--- a/src/vulkan/wsi/wsi_common_drm.c
++++ b/src/vulkan/wsi/wsi_common_drm.c
 @@ -45,6 +45,9 @@
  static VkResult
  wsi_dma_buf_export_sync_file(int dma_buf_fd, int *sync_file_fd)
@@ -256,10 +256,10 @@ index 9835f8f..ba73f67 100644
  }
  
  static VkResult
-diff --git a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_x11.c b/mesa-24.2.7/src/vulkan/wsi/wsi_common_x11.c
+diff --git a/src/vulkan/wsi/wsi_common_x11.c b/src/vulkan/wsi/wsi_common_x11.c
 index 0c0c489..2b9db40 100644
---- a/sa/mesa-24.2.7/src/vulkan/wsi/wsi_common_x11.c
-+++ b/mesa-24.2.7/src/vulkan/wsi/wsi_common_x11.c
+--- a/src/vulkan/wsi/wsi_common_x11.c
++++ b/src/vulkan/wsi/wsi_common_x11.c
 @@ -149,22 +149,7 @@ static bool
  wsi_x11_check_dri3_compatible(const struct wsi_device *wsi_dev,
                                xcb_connection_t *conn)
