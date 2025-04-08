@@ -12,7 +12,7 @@ Don't forget add this packages to hold list after build & install packages:
 
 /etc/pacman.conf
 ```sh
-HoldPkg = ... mesa mesa-amber mesa-docs opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-broadcom vulkan-freedreno vulkan-gfxstream vulkan-nouveau vulkan-panfrost vulkan-radeon vulkan-swrast vulkan-virtio vullan-dzn ...
+IgnorePkg = ... mesa mesa-amber mesa-docs opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-broadcom vulkan-freedreno vulkan-gfxstream vulkan-nouveau vulkan-panfrost vulkan-radeon vulkan-swrast vulkan-virtio vullan-dzn ...
 ```
 
 PKGBUILD source:
